@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 2px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 25%; /* Could be more or less, depending on screen size */
+    height:25%;
+}
+
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+h1   {    color: grey;
+    position: relative;
+    top: 76px;}
+
+
+</style>
+<body>
+
+
+
+
+
+
+ 
+ 
+    <h1 align="center">Sign Up for an  Account</h1>
+ <form method="POST" action="@routes.PersonController.addPerson()"  class="modal-content" name="form1">
+    <div class="container">
+     
+     
+      <hr>
+      <label for="email"><b>First  Name</b></label>
+      <input type="text" placeholder="Enter name" name="name" id="name"  maxlength="20" onchange="allLetter(document.form1.name)" required>
+        <label for="email"><b>Last  Name</b></label>
+      <input type="text" placeholder="Enter last name" name="lname"  id="lname" maxlength="20" onchange="allLetter(document.form1.lname)" required>
+        <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter email" name="email" id="email"  id="email"    required>
+      
+       <label for="email"><b>Address</b></label>
+      <input type="text" placeholder="Enter address" name="address" required>
+       <label for="email"><b>Phone</b></label>
+      <input type="text" placeholder="Enter phone" name="phone" maxlength="10"   onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+      
+       <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required onchange="checkpattern(document.form1.psw)"  >
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="Cpass"  id="Cpass" onchange="check(document.form1.Cpass)" required>
+      
+<!-- 
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label> -->
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        
+        <button type="submit" class="signupbtn">Sign Up</button>
+         <a href="/login" style="     position: absolute;
+    top: 768px;
+    left: 990px;">Login</a>
+        
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+</body>
+</html>
+
+<script>
+function allLetter(inputtxt)  
+{  
+ var letters = /^[A-Za-z]+$/;  
+ if(inputtxt.value.match(letters))  
+   {  
+    return true;  
+   }  
+ else  
+   {  
+	   alert("Given Field must be in alphabates"); 
+   if(inputtxt.value==  document.getElementById("name").value)
+   document.getElementById("name").value = '';
+   if( inputtxt.value== document.getElementById("lname").value)
+   document.getElementById("lname").value = '';
+  
+   return false;  
+   }  
+ 
+ 
+ 
+ 
+}
+
+
+
+
+function checkpattern(inputText)  
+{  
+	
+	  var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+
+if(inputText.value.match(re))  
+{  
+document.form1.psw.focus();  
+return true;  
+}  
+else  
+{  
+alert(" password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters  !");  
+document.form1.psw.focus();  
+document.getElementById("psw").value = '';
+return false;  
+}  
+
+}
+
+function check(inputtxt)  
+{  
+  //alert(123);
+ //alert(document.getElementById("pass"));
+ //alert(inputtxt.value);
+ if(inputtxt.value==document.getElementById("psw").value)  
+   {  
+    return true;  
+   }  
+ else  
+   {  
+	   alert("Password not matched");
+
+	     document.getElementById("psw-repeatCpass").value = '';
+  
+   return false;  
+   }  
+}
+
+
+
+</script>

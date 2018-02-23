@@ -1,0 +1,12 @@
+
+
+@main("Welcome to Play") {
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+    <ul id="persons"></ul>
+  <form method="GET" action="@routes.PersonController.updation()">
+        <input type="text" name="name"/>
+         
+        <button>Update Person</button>
+    </form>
+}
