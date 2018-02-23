@@ -1,0 +1,6 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/fidel113/git/EmployeeMgmtP/EmployeeMgmtP/conf/logback.xml,/home/fidel113/git/EmployeeMgmtP/EmployeeMgmtP/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/fidel113/git/EmployeeMgmtP/EmployeeMgmtP/conf/META-INF,/home/fidel113/git/EmployeeMgmtP/EmployeeMgmtP/target/scala-2.11/classes/META-INF)[0m
+[0m[[0mdebug[0m] [0m	(/home/fidel113/git/EmployeeMgmtP/EmployeeMgmtP/conf/routes,/home/fidel113/git/EmployeeMgmtP/EmployeeMgmtP/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/fidel113/git/EmployeeMgmtP/EmployeeMgmtP/conf/application.conf,/home/fidel113/git/EmployeeMgmtP/EmployeeMgmtP/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/fidel113/git/EmployeeMgmtP/EmployeeMgmtP/conf/META-INF/persistence.xml,/home/fidel113/git/EmployeeMgmtP/EmployeeMgmtP/target/scala-2.11/classes/META-INF/persistence.xml)[0m
